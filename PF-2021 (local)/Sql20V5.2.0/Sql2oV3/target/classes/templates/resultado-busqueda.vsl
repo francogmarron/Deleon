@@ -1,0 +1,211 @@
+
+		</header>
+		<!--/ End Header -->
+		
+		<!-- Breadcrumbs -->
+		<div class="breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="bread-inner">
+							<ul class="bread-list">
+								<li><a href="index1.html">Inicio</a><i class="ti-arrow-right"></i></a></li>
+								<li class="active"><a href="blog-single.html">Busqueda</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Breadcrumbs -->
+		
+		<!-- Product Style -->
+		<section class="product-area shop-sidebar shop section">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-4 col-12">
+						<div class="shop-sidebar">
+								<!-- Single Widget -->
+								<div class="single-widget category">
+									<h3 class="title">Categorias</h3>
+									<ul class="categor-list">
+										<li><a href="#">Almacén</a></li>
+										<li><a href="#">Bebidas</a></li>
+										<li><a href="#">Carnes</a></li>
+										<li><a href="#">Frutas y Verduras</a></li>
+										<li><a href="#">Pescados y Mariscos</a></li>
+										<li><a href="#">Quesos y Fiambres</a></li>
+										<li><a href="#">Lácteos</a></li>
+									</ul>
+								</div>
+								<!--/ End Single Widget -->
+								<!-- Shop By Price -->
+									<div class="single-widget range">
+										<h3 class="title">Filtrar por Precio</h3>
+										<div class="price-filter">
+											<div class="price-filter-inner">
+												<div id="slider-range"></div>
+													<div class="price_slider_amount">
+													<div class="label-input">
+														<span>Rango:</span><input type="text" id="amount" name="price" placeholder="Agrega tu precio"/>
+													</div>
+												</div>
+											</div>
+										</div>
+										<ul class="check-box-list">
+											<li>
+												<label class="checkbox-inline" for="1"><input name="news" id="1" type="checkbox">$20 - $50<span class="count">(3)</span></label>
+											</li>
+											<li>
+												<label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox">$50 - $100<span class="count">(5)</span></label>
+											</li>
+											<li>
+												<label class="checkbox-inline" for="3"><input name="news" id="3" type="checkbox">$100 - $250<span class="count">(8)</span></label>
+											</li>
+										</ul>
+									</div>
+									<!--/ End Shop By Price -->
+						</div>
+					</div>
+					<div class="col-lg-9 col-md-8 col-12">
+						<div class="row">
+							<div class="col-12">
+								<!-- Shop Top -->
+								<div class="shop-top">
+									<div class="shop-shorter">
+										<div class="single-shorter">
+											<label>Mostrar :</label>
+											<select>
+												<option selected="selected">09</option>
+												<option>15</option>
+												<option>25</option>
+												<option>30</option>
+											</select>
+										</div>
+										<div class="single-shorter">
+											<label>Ordenado por :</label>
+											<select>
+												<option selected="selected">Nombre</option>
+												<option>Precio</option>
+												<option>Cantidad</option>
+											</select>
+										</div>
+									</div>
+									<ul class="view-mode">
+										<li class="active"><a href="shop-grid.html"><i class="fa fa-th-large"></i></a></li>
+										<li><a href="shop-list.html"><i class="fa fa-th-list"></i></a></li>
+									</ul>
+								</div>
+								<!--/ End Shop Top -->
+							</div>
+						</div>
+                                                    <div class="row">
+                                                        <div class="row">
+                                                            #foreach( $p in $productos )  
+                                                                           
+                                                                            <div class="col-lg-4 col-md-6 col-12">
+                                                                                
+                                                                               <div class="single-product">
+                                                                                       <div class="product-img">
+                                                                                                
+                                                                                               <a href="$PathWeb.getVER_PRODUCTO()?idProducto=$p.getId()">
+                                                                                                       <img class="default-img" src="http://localhost:4567/images/$p.getImg()" width="550" height="750" alt="#">
+                                                                                               </a>
+                                                                                               <div class="button-head">
+                                                                                                       <div class="product-action">
+                                                                                                               <a title="Favoritos" href="#"><i class=" ti-heart "></i><span>Agregar a Favoritos</span></a>
+                                                                                                               <a title="Comparar" href="#"><i class="ti-bar-chart-alt"></i><span>Agregar a Comparar</span></a>
+                                                                                                       </div>
+                                                                                                       <div class="product-action-2">
+                                                                                                              <a title="Agregar a Carrito" href="/api/getCarrito?idCliente=1&idProducto=$p.getId()&cantProducto=1">Agregar a Carrito</a>
+                                                                                                       </div>
+                                                                                               </div>
+                                                                                       </div>
+                                                                                       <div class="product-content">
+                                                                                               <h3><a href="$PathWeb.getVER_PRODUCTO()/?idProducto=$p.getId()">$p.getNombre()</a></h3>
+                                                                                               <div class="product-price">
+                                                                                                    <span>$p.getPrecio()</span>
+                                                                                               </div>
+                                                                                       </div>
+                                                                               </div>
+
+                                                                       </div>   
+                                                             #end
+                       
+                                                         </div>
+                                                         </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </section>
+		<!--/ End Product Style 1  -->
+		
+		<!-- Start Shop Services Area  -->
+		<section class="shop-services section">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-6 col-12">
+						<!-- Start Single Service -->
+						<div class="single-service">
+							<i class="ti-rocket"></i>
+							<h4>Envio Gratuito</h4>
+							<p>Ordenes mayores a $1000</p>
+						</div>
+						<!-- End Single Service -->
+					</div>
+					<div class="col-lg-3 col-md-6 col-12">
+						<!-- Start Single Service -->
+						<div class="single-service">
+							<i class="ti-reload"></i>
+							<h4>Devolucion gratuita</h4>
+							<p>Devolucion dentro de los 30 días</p>
+						</div>
+						<!-- End Single Service -->
+					</div>
+					<div class="col-lg-3 col-md-6 col-12">
+						<!-- Start Single Service -->
+						<div class="single-service">
+							<i class="ti-lock"></i>
+							<h4>Forma de pago seguro</h4>
+							<p>100% seguros</p>
+						</div>
+						<!-- End Single Service -->
+					</div>
+					<div class="col-lg-3 col-md-6 col-12">
+						<!-- Start Single Service -->
+						<div class="single-service">
+							<i class="ti-tag"></i>
+							<h4>Los mejores precios</h4>
+							<p>Garantia de buenos precios</p>
+						</div>
+						<!-- End Single Service -->
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Shop Services Area -->
+		
+		<!-- Start Shop Newsletter  -->
+		<section class="shop-newsletter section">
+			<div class="container">
+				<div class="inner-top">
+					<div class="row">
+						<div class="col-lg-8 offset-lg-2 col-12">
+							<!-- Start Newsletter Inner -->
+							<div class="inner">
+								<h4>Ofertas en tu email</h4>
+								<p> Suscribite y consegui <span>10%</span> de descuento en tu primera compra</p>
+								<form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
+									<input name="EMAIL" placeholder="Tu dirección de email" required="" type="email">
+									<button class="btn">Subscribite</button>
+								</form>
+							</div>
+							<!-- End Newsletter Inner -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Shop Newsletter -->
+		
+		

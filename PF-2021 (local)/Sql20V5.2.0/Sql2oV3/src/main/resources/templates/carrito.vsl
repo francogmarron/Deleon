@@ -1,0 +1,168 @@
+	
+            <!--/ End Header -->
+        var monto;
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="bread-inner">
+                            <ul class="bread-list">
+                                <li><a href="index1.html">Inicio<i class="ti-arrow-right"></i></a></li>
+                                <li class="active"><a href="blog-single.html">Carrito</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Breadcrumbs -->
+                
+        <!-- Shopping Cart -->
+        <div class="shopping-cart section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Shopping Summery -->
+                        <table class="table shopping-summery">
+                            <thead>
+                                <tr class="main-hading">
+                                    <th>PRODUCTO</th>
+                                    <th>NOMBRE</th>
+                                    <th class="text-center">PRECIO UNITARIO</th>
+                                    <th class="text-center">CANTIDAD</th>
+                                    <th class="text-center">TOTAL</th> 
+                                    <th class="text-center"><i class="ti-trash remove-icon"></i></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                #set( $cuenta = 0 )
+                                #set( $cuentaTotal = 0)
+                                #foreach( $p in $productos )
+                                #set( $temporalPrecio = $p.getPrecio()*$pxcs.get($cuenta) )
+                                <tr>
+                                    <td class="image" data-title="No"><img src="http://localhost:4567/images/$p.getImg()" width="100" height="100" alt="#"></td>
+                                    <td class="product-des" data-title="Description">
+                                        <p class="product-name"><a href="#">$p.getNombre()</a></p>
+                                        <p class="product-des">Descripcion Producto.</p>
+                                    </td>
+                                    <td class="price" data-title="Precio"><span>$p.getPrecio()</span></td>
+                                    <td class="qty" data-title="Qty"><!-- Input Order -->
+                                        <div class="btn-group">
+                                            <a href="/api/EliminarProducto?idProducto=$p.getId()&cantProducto=1" class="btn btn-primary btn-sm" aria-current="page" style=" background-color: #22870d; color:white; "> - </a>
+                                           <input type="text" name="quant[1]" class="input-number"  data-min="1" data-max="100" value="$pxcs.get($cuenta)"  readonly>
+                                            <a href="#" class="btn btn-primary btn-sm"  style="background-color: #22870d; color:white;"> + </a>
+                                          </div>
+                                        <!--/ End Input Order -->
+                                    </td>
+                                    <td class="total-amount" data-title="Total"><span>$temporalPrecio</span></td>
+                                    <td class="action" data-title="Remove"><a href="/api/EliminarTodos?idProducto=$p.getId()&cantProducto=1"><i class="ti-trash remove-icon"></i></a></td>
+                                </tr>
+                                #set( $cuentaTotal = $temporalPrecio + $cuentaTotal  )
+                                #set( $cuenta = $cuenta + 1 )
+                                
+                                #end
+                                
+                            </tbody>
+                        </table>
+                        <!--/ End Shopping Summery -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Total Amount -->
+                        <div class="total-amount">
+                            <div class="row">
+                                <div class=" col-12 " >
+                              
+                                    <div class="right"  style="float: right;" >
+                                        <ul>
+                                            <li>Subtotal<span>$cuentaTotal</span></li>
+                                            <li>Envio<span>Gratis</span></li>
+                                            <li class="last">Total<span>$cuentaTotal</span></li>
+                                        </ul>
+                                        <div class="button5">
+                                            <a href="$PathWeb.getCOMPRAR_C()?monto=$cuentaTotal" class="btn">Comprar
+                                                 </a>
+                                            <a href="$PathWeb.getVERTODOS()" class="btn">Continuar comprando</a>
+                                            <a href="/api/verHistorial/"  class="btn">VER HISTORIAL DE COMPRA</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ End Total Amount -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Shopping Cart -->
+        
+        <!-- Start Shop Services Area  -->
+        <section class="shop-services section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Start Single Service -->
+                        <div class="single-service">
+                            <i class="ti-rocket"></i>
+                            <h4>Envio Gratuito</h4>
+                            <p>Ordenes mayores a $1000</p>
+                        </div>
+                        <!-- End Single Service -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Start Single Service -->
+                        <div class="single-service">
+                            <i class="ti-reload"></i>
+                            <h4>Devolucion gratuita</h4>
+                            <p>Devolucion dentro de los 30 días</p>
+                        </div>
+                        <!-- End Single Service -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Start Single Service -->
+                        <div class="single-service">
+                            <i class="ti-lock"></i>
+                            <h4>Forma de pago seguro</h4>
+                            <p>100% seguros</p>
+                        </div>
+                        <!-- End Single Service -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Start Single Service -->
+                        <div class="single-service">
+                            <i class="ti-tag"></i>
+                            <h4>Los mejores precios</h4>
+                            <p>Garantia de buenos precios</p>
+                        </div>
+                        <!-- End Single Service -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Shop Services Area -->
+        
+        <!-- Start Shop Newsletter  -->
+        <section class="shop-newsletter section">
+            <div class="container">
+                <div class="inner-top">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2 col-12">
+                            <!-- Start Newsletter Inner -->
+                            <div class="inner">
+                                <h4>Ofertas en tu email</h4>
+                                <p> Suscribite y consegui <span>10%</span> de descuento en tu primera compra</p>
+                                <form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
+                                    <input name="EMAIL" placeholder="Tu dirección de email" required="" type="email">
+                                    <button class="btn">Subscribite</button>
+                                </form>
+                            </div>
+                            <!-- End Newsletter Inner -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Shop Newsletter -->
+        

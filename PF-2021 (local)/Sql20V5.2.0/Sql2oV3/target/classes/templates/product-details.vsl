@@ -1,0 +1,31 @@
+<style>
+html, body{
+  height: 100%;
+ 
+}
+.imagen{
+  float: center;
+}
+.contenedor{
+  float: right;
+}
+</style>
+
+            <div class="product-img" method='get'>                                                                    
+                    <div class="contenedor">
+                        <h4 class="card-title">$p.getNombre()</h4>
+                        <h4 class="card-title text-muted" > en Stock: $p.getStock()</h4>
+                        <h4 class="card-title"> precio: $ $p.getPrecio()</h4>
+                        <a href="$PathWeb.getVER_COMENTARIO()?idProducto=$p.getId()">ver comentarios</a>
+                        <div class="product-action-2">
+                          <a title="Agregar a Carrito" href="/api/getCarrito?idCliente=1&idProducto=$p.getId()&cantProducto=1">Agregar a Carrito</a>
+                         </div>
+                        ##
+                     </div>
+                     
+                    <center>
+                    <div class="imagen">
+                        <img class="default-img" src="http://localhost:4567/images/$p.getImg()" width="550" height="750" alt="#">
+                    </div>
+            </div>
+      

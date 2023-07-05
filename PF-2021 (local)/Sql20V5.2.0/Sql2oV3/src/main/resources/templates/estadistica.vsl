@@ -1,0 +1,75 @@
+<!-- Header -->
+	<header class="header shop" style="background-color:#xxxx !important;">
+            <title>Graficos</title>
+                 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                 <link rel="stylesheet" type="text/css" href="http://localhost:4567/css/estilo.css">
+
+		<!--/ End Header Inner -->
+	</header>
+	<!--/ End Header -->
+<body>
+    <center>
+        <div class="container">
+        <form action=$PathWeb.getPRODUCTOSMASVENDIDOS() method='POST'>
+          <div >
+                <label >Fecha inicio Busqueda </label>
+                <input id="ini" name="ini"  style="width : 150px; heigth : 50px"  placeholder="dd/mm/aaaa"  type="date">
+          </div>
+            <div >
+                <label >Fecha fin Busqueda </label>
+                <input id="fin" name="fin"  style="width : 150px; heigth : 50px" placeholder="dd/mm/aaaa" type="date">
+            </div>
+           
+            <div><button type="submit" value="submit" class="btn btn-primary" >
+                                           Ver Estadisticas 
+                                         </button>
+            </div>
+        </div>
+    </center>
+            <div class="container">
+                <table>
+                    <tr><th>Producto</th>
+                    
+                        #foreach(  $p in  $productos  )
+                           <td> <h6>$p</h6></td>
+                        #end
+                    </tr>
+                    <tr><th>Cantidad</th>
+                        #foreach(  $c in $cants )
+                            <td><h6>$c</h6></td>
+                        #end
+                    </tr>
+
+                </table>
+            </div>
+        </form>
+        <div class="container"  method='get'>
+            <h2> los productos mas vendidos</h2>
+        
+            <form id="form-param">
+                        #foreach(  $p in  $productos  )
+                         <input type="hidden" class="parametro" value="$p">
+                        #end
+                        #foreach(  $c in $cants )
+                        <input type="hidden" class="valor" value="$c">
+                        #end
+                    <div class="buttons">
+                            <button type="hidden" class="addParam" ></button>
+                            <button type="button" class="showResults">Mostrar Resultados</button>
+                    </div>
+            </form>
+            <div id="grafico" class="row"> </div> 
+            <script src="http://localhost:4567/js/script.js"></script>       
+        </div>
+        
+        
+       
+
+    
+        ##<div class="container" method="get">
+        ##     #foreach( $c in $comentarios )
+        ##        <label>$c.getFecha() $.getDescripcion()</label>
+        ##    #end
+        ##</div>
+</body>
+

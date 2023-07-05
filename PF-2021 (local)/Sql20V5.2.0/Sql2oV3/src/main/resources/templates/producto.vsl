@@ -1,0 +1,110 @@
+<form action=$PathWeb.getPRODUCTO_INSERT() method='POST'>
+  <div class="form-group">
+    <label for="nombre">Nombre del Producto Solicitado</label>
+    <input id="nombre" name="nombre" class="form-control" type="text">
+  </div>
+   <div class="form-group">
+    <label for="stock">Precio </label>
+    <input id="stock" name="stock" class="form-control" type="number" min="0" >
+  </div>
+  <div class="form-group">
+    <label for="precio">Precio </label>
+    <input id="precio" name="precio" class="form-control" type="number" min="0" >
+  </div>
+  <button type="submit" class="btn">Agregar Producto</button>
+</form>
+
+<form action=$PathWeb.getPRODUCTO_UPDATE() method='POST'>
+  <div class="form-group">
+    <label for="id">Id a actualizar</label>
+    <input id="id" name="id" class="form-control" type="number" value=$producto.getId()>
+  </div>
+  <div class="form-group">
+    <label for="nombre">Nombre del Producto Solicitado</label>
+    <input id="nombre" name="nombre" class="form-control" type="text" value=$producto.getNombre()>
+  </div>
+  <div class="form-group">
+    <label for="cantidad">cantidad de productos </label>
+    <input id="cantidad" name="cantidad" class="form-control" type="number" min="0" value=$producto.getStock()>
+  </div>
+  <div class="form-group">
+    <label for="precio">Precio </label>
+    <input id="precio" name="precio" class="form-control" type="number" min="0" value=$producto.getPrecio()>
+  </div>
+  <button type="submit" class="btn">Actualizar Producto</button>
+</form>
+
+<form action=$PathWeb.getPRODUCTO_DELETE() method='POST'>
+  <div class="form-group">
+    <label for="id">Id a borrar</label>
+    <input id="id" name="id" class="form-control" type="number" value=$producto.getId()>
+  </div>
+  <div class="form-group">
+    <label for="nombre">Nombre del Producto Solicitado</label>
+    <input id="nombre" name="nombre" class="form-control" type="text" placeholder=$producto.getNombre()>
+  </div>
+  <div class="form-group">
+    <label for="cantidad">cantidad de productos </label>
+    <input id="cantidad" name="cantidad" class="form-control" type="number" min="0" placeholder=$!{producto.getCantidad()}>
+  </div>
+  <div class="form-group">
+    <label for="precio">Precio </label>
+
+## revise el comportamiento de la siguente linea el ! y las llaves para la directiva hacen que 
+## la primera vez que se instancia el formulario si el objeto no tiene valores no mostrara el 
+## mensaje en el formulario.
+    
+<input id="precio" name="precio" class="form-control" type="number" min="0" placeholder=$!{producto.getPrecio()}>
+  </div>
+  <button type="submit" class="btn">Borrar Producto</button>
+</form>
+
+
+<form action=$PathWeb.getPRODUCTO_FILTRAR() method='get'>
+  <div class="form-group">
+    <label for="nombre">Filtrar por Nombre</label>
+    <input id="nombre" name="nombre" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Filtar por nombre</button>
+</form>
+      <CENTER>
+      <B>Cantidad de productos: $productos.size()</B>
+      <BR/>  <BR/>
+      Ellos son:  #set( $cuenta = 1 )  
+      <TABLE class="table  table-striped">
+ <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre de Producto</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Fecha</th>
+    </tr>
+  </thead>
+         #foreach( $p in $productos )          
+            
+           
+                            <TR>
+                                <TD>$cuenta         
+                                <TD>$p.getStock()</TD>
+				<TD>$p.getPrecio()     </TD>
+				<TD>$p.getImg()     </TD>
+	                        <!-- td><a href="/producto?action=get&id=${p.id}">Update</a></td -->
+	                        <!-- td><a href="/producto/id/:$p.id">Seleccionar</a></td -->
+                                <!-- td><a href="${PathWeb.PRODUCTOID}?id=$p.id">Seleccionar</a></td -->
+                                <td><a href="$PathWeb.getPRODUCTO_ID()?id=$p.id" >Seleccionar</a></td -->
+                            </TR>                    
+          #set( $cuenta = $cuenta + 1 )
+        #end
+      </TABLE>      <BR/>      <I>Todos los Productos similares a $nombre</I>
+      </CENTER>    
+
+<form action=$PathWeb.getPRODUCTO_CANTIDAD() method='get'>
+  <div class="form-group">
+    <label for="cantidad">Cantidad a filtrar</label>
+    <input id="cantidad" name="cantidad" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Filtar por cantidad</button>
+</form>
+
+

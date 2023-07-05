@@ -1,0 +1,78 @@
+<div class="container" style="padding-top: 10%; method='get'>
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Shopping Summery -->
+                        <table class="table shopping-summery">
+                            <thead>
+                                <tr class="main-hading">
+                                    <th>PRODUCTO</th>
+                                    <th>NOMBRE</th>
+                                    <th class="text-center">PRECIO UNITARIO</th>
+                                    <th class="text-center">CANTIDAD</th>
+                                    <th class="text-center">TOTAL</th> 
+                                    <th class="text-center"></th>
+                                  
+                                </tr>
+                            </thead>
+                            <tbody>
+                                #set( $cuenta = 0 )
+                                #set( $cuentaTotal = 0)
+                                #foreach( $p in $productos )
+                                #set( $temporalPrecio = $p.getPrecio()*$pxcs.get($cuenta) )
+                                <tr>
+                                    <td class="image" data-title="No"><img src="http://localhost:4567/images/$p.getImg()" width="100" height="100" alt="#"></td>
+                                    <td class="product-des" data-title="Description">
+                                        <p class="product-name"><a href="#">$p.getNombre()</a></p>
+                                        <p class="product-des">Descripcion Producto.</p>
+                                    </td>
+                                    <td class="price" data-title="Precio"><span>$p.getPrecio()</span></td>
+                                    <td class="qty" data-title="Qty"><!-- Input Order -->
+                                        <div class="input-group">
+                                           
+                                            <input type="text" name="quant[1]" class="input-number"  data-min="1" data-max="100" value="$pxcs.get($cuenta)">
+                                            
+                                        </div>
+                                        <!--/ End Input Order -->
+                                    </td>
+                                    <td class="total-amount" data-title="Total"><span>$temporalPrecio</span></td>
+                                   <td class="comentario" data-title="comentario">
+                                            <!--
+                                                 <div class="container" method='get'>
+                                                    <form action=$PathWeb.getCOMENTARIO_INSERT() method='POST'>
+                                                        <div class="form-group">
+                                                        
+                                                          <input id="descripcion" name="descripcion" placeholder="insertar comentario" class="form-control" type="text">
+                                                        </div>
+                                                        <div class="form-group">
+                                                          <input id="id" name="id" class="form-control"  value=$p.getId() type="hidden" min="0" >
+                                                        </div>
+                                                         <button type="submit" value="submit" class="btn btn-secondary" >
+                                                            Agregar comentario
+                                                          </button>
+                                                -->
+                                                    </form>
+                                                    <label>$c.getDescripcion()</label>
+                                                <div>
+                                                    
+                                                    <a href="$PathWeb.getVER_COMENTARIO()?idProducto=$p.getId()">ver comentarios</a>
+                                                    
+                                                 </div>
+                                                
+                                    </td> 
+                                           
+                                      </td>
+                                    <td>
+                                </tr>
+                                
+                                #set( $cuentaTotal = $temporalPrecio + $cuentaTotal  )
+                                #set( $cuenta = $cuenta + 1 )
+                                #end
+                                </tbody>
+                                 
+                        </table>
+                                   
+                    </div>
+                            <!--/ End Shopping Summery -->
+                        </div>
+                    </div>
+                </div>

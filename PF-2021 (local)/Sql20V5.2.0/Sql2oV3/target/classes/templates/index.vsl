@@ -1,0 +1,132 @@
+
+	
+	
+	<!--/ End Header -->
+	
+	<!-- Slider Area -->
+	<!-- Slider Area -->
+	<section class="hero-slider" >
+		<!-- Single Slider -->
+		<div class="single-slider">
+			<div class="container">
+		
+			</div>
+		</div>
+		<!--/ End Single Slider -->
+	</section>
+	<!--/ End Slider Area -->
+	
+	<!-- Start Small Banner  -->
+	<section class="small-banner section">
+		<div class="container-fluid">
+			<div class="row">
+				<!-- Single Banner  -->
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="single-banner">
+						<img src="http://localhost:4567/images/hogar.png" alt="#">
+						<div class="content">
+							<p>Black Days</p>
+							<h3>Hasta 50%  <br> en articulos <br> seleccionados de hogar</h3>
+							<a href="#">Descubrilo ahora</a>
+						</div>
+					</div>
+				</div>
+				<!-- /End Single Banner  -->
+				<!-- Single Banner  -->
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="single-banner">
+						<img src="http://localhost:4567/images/limpieza.png" alt="#">
+						<div class="content">
+							<p>Black Days</p>
+							<h3>Hasta 2do al 70% <br>En articulos de limpieza</h3>
+							<a href="#">Compralos ahora</a>
+						</div>
+					</div>
+				</div>
+				<!-- /End Single Banner  -->
+				<!-- Single Banner  -->
+				<div class="col-lg-4 col-12">
+					<div class="single-banner tab-height">
+						<img src="http://localhost:4567/images/carnes.png" alt="#">
+						<div class="content">
+							<p>Black Days</p>
+							<h3>Hasta 25% <br> En carnes, vegetales <br> y frutas seleccionadas </h3>
+							<a href="#">Descubrilo ahora</a>
+						</div>
+					</div>
+				</div>
+				<!-- /End Single Banner  -->
+			</div>
+		</div>
+	</section>
+	<!-- End Small Banner -->
+	
+	<!-- Start Shop Services Area  -->
+    <section class="shop-services section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12">
+                    <!-- Start Single Service -->
+                    <div class="single-service">
+                        <i class="ti-rocket"></i>
+                        <h4>Envio Gratuito</h4>
+                        <p>Ordenes mayores a $1000</p>
+                    </div>
+                    <!-- End Single Service -->
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <!-- Start Single Service -->
+                    <div class="single-service">
+                        <i class="ti-reload"></i>
+                        <h4>Devolucion gratuita</h4>
+                        <p>Devolucion dentro de los 30 días</p>
+                    </div>
+                    <!-- End Single Service -->
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <!-- Start Single Service -->
+                    <div class="single-service">
+                        <i class="ti-lock"></i>
+                        <h4>Forma de pago seguro</h4>
+                        <p>100% seguros</p>
+                    </div>
+                    <!-- End Single Service -->
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <!-- Start Single Service -->
+                    <div class="single-service">
+                        <i class="ti-tag"></i>
+                        <h4>Los mejores precios</h4>
+                        <p>Garantia de buenos precios</p>
+                    </div>
+					<!-- End Single Service -->
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Shop Services Area -->
+	
+	<!-- Start Shop Newsletter  -->
+	<section class="shop-newsletter section">
+		<div class="container">
+			<div class="inner-top">
+				<div class="row">
+					<div class="col-lg-8 offset-lg-2 col-12">
+						<!-- Start Newsletter Inner -->
+						<div class="inner">
+							<h4>Ofertas en tu email</h4>
+							<p> Suscribite y consegui <span>10%</span> de descuento en tu primera compra</p>
+							<form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
+								<input name="EMAIL" placeholder="Tu dirección de email" required="" type="email">
+								<button class="btn">Subscribite</button>
+							</form>
+						</div>
+						<!-- End Newsletter Inner -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Shop Newsletter -->
+	
+	

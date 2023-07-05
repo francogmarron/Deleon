@@ -1,0 +1,8 @@
+2021-12-10 23:32:48,570 - #parse(): cannot find template 'templates/estadistica.vsl', called at templates/layout.vsl[line 207, column 10]
+2021-12-10 23:33:23,752 - ResourceManager : unable to find resource 'templates/estadistica.vsl' in any resource loader.
+2021-12-10 23:33:23,768 - #parse(): cannot find template 'templates/estadistica.vsl', called at templates/layout.vsl[line 207, column 10]
+2021-12-10 23:33:23,768 - #parse(): cannot find template 'templates/estadistica.vsl', called at templates/layout.vsl[line 207, column 10]
+2021-12-10 23:38:57,139 - ResourceManager : unable to find resource 'templates/estadistica.vsl' in any resource loader.
+2021-12-10 23:38:57,139 - #parse(): cannot find template 'templates/estadistica.vsl', called at templates/layout.vsl[line 207, column 10]
+2021-12-10 23:39:25,835 - ResourceManager : unable to find resource 'templates/estadistica.vsl' in any resource loader.
+2021-12-10 23:39:25,835 - #parse(): cannot find template 'templates/estadistica.vsl', called at templates/layout.vsl[line 207, column 10]

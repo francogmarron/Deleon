@@ -1,0 +1,31 @@
+26-03-2018 17:18:06 INFO  - Logging initialized @320ms to org.eclipse.jetty.util.log.Slf4jLog
+ 26-03-2018 17:18:06 INFO  - == Spark has ignited ...
+ 26-03-2018 17:18:06 INFO  - >> Listening on 0.0.0.0:4567
+ 26-03-2018 17:18:06 INFO  - jetty-9.4.6.v20170531
+ 26-03-2018 17:18:07 INFO  - DefaultSessionIdManager workerName=node0
+ 26-03-2018 17:18:07 INFO  - No SessionScavenger set, using defaults
+ 26-03-2018 17:18:07 INFO  - Scavenging every 660000ms
+ 26-03-2018 17:18:07 INFO  - Started ServerConnector@22be84eb{HTTP/1.1,[http/1.1]}{0.0.0.0:4567}
+ 26-03-2018 17:18:07 INFO  - Started @552ms
+ 26-03-2018 17:18:18 INFO  - Ingreso a Principal
+ 26-03-2018 17:18:18 INFO  - Camino /logout/
+ 26-03-2018 17:18:23 INFO  - Ingreso a Principal
+ 26-03-2018 17:18:23 INFO  - Camino /logout/
+ 26-03-2018 17:18:23 INFO  - ingresa al login
+ 26-03-2018 17:18:34 INFO  - Ingreso a Principal
+ 26-03-2018 17:18:34 INFO  - Camino /logout/
+ 26-03-2018 17:19:18 INFO  - Logging initialized @365ms to org.eclipse.jetty.util.log.Slf4jLog
+ 26-03-2018 17:19:18 INFO  - == Spark has ignited ...
+ 26-03-2018 17:19:18 INFO  - >> Listening on 0.0.0.0:4567
+ 26-03-2018 17:19:18 INFO  - jetty-9.4.6.v20170531
+ 26-03-2018 17:19:18 INFO  - DefaultSessionIdManager workerName=node0
+ 26-03-2018 17:19:18 INFO  - No SessionScavenger set, using defaults
+ 26-03-2018 17:19:18 INFO  - Scavenging every 600000ms
+ 26-03-2018 17:19:18 INFO  - Started ServerConnector@4e3b56e9{HTTP/1.1,[http/1.1]}{0.0.0.0:4567}
+ 26-03-2018 17:19:18 INFO  - Started @584ms
+ 26-03-2018 17:19:31 INFO  - Ingreso a Principal
+ 26-03-2018 17:19:31 INFO  - Camino /logout/
+ 26-03-2018 17:19:31 INFO  - ingresa al login
+ 26-03-2018 17:19:38 INFO  - Ingreso a Principal
+ 26-03-2018 17:19:38 INFO  - Camino /logout/
+ 

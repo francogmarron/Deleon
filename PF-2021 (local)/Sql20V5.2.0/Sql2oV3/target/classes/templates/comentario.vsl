@@ -1,0 +1,48 @@
+<style>
+html, body{
+  height: 100%;
+ 
+}
+.imagen{
+  float: center;
+}
+.contenedor{
+  float: right;
+}
+</style>
+      
+        <center>
+            <div   method='get'> 
+                            <h3>los comentarios </h3>
+                                  #foreach( $c in $comentarios )
+                                        <div class="comentario" data-title="comentario">
+                                            <label>$c.getDescripcion()</label><br>
+                                        </div>
+                                  #end
+
+            
+                                        <div >
+                                                   <form action=$PathWeb.getCOMENTARIO_INSERT() method='POST'>
+                                                        <div class="form-group">
+                                                        
+                                                          <input id="descripcion" name="descripcion" placeholder="insertar comentario" type="text">
+                                                        </div>
+                                                        <div class="form-group">
+                                                          <input id="id" name="id"  value=$p.getId() type="hidden" min="0" >
+                                                        </div>
+                                                         <button type="submit" value="submit" class="btn btn-secondary" id="btn1" >
+                                                            Agregar comentario
+                                                          </button>
+                                                         
+                                        </div>
+                                        
+                            </div>
+            </div>
+        </center>
+    <script>
+          $("#btn1").click(function(){
+              alert("comentario realizado")
+              
+          });
+    </script>    
+
